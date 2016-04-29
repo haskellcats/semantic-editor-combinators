@@ -125,9 +125,10 @@ let db =
 ]
 ```
 
-In the last example more than one thing was updated because of the use of
-map. Actually you can make editors to target arbitrarily complex things. Here
-is a basic example which only modifies every nth item of a list.
+In the last example more than one thing was updated because of the use of map.
+Actually you can make editors to target many things at once in an arbitrarily
+complex way. Here is a basic example which only modifies every nth item of a
+list.
 
 ```
 onEvery :: Int -> (a -> a) -> [a] -> [a]
@@ -159,7 +160,7 @@ let db' = (index 2 . onPuke . ret . fmap) (setColor Blue) db
 13 blue puke appears
 ```
 
-You can similarly edit the argument before it gets to a function.
+Similarly you can edit the argument before it gets to a function.
 
 ```
 arg :: (a -> a) -> (a -> b) -> (a -> b)
