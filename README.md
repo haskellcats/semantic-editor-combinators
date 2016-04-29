@@ -190,7 +190,7 @@ code point.
 asCode :: (Int -> Int) -> Char -> Char
 asCode f = chr . f . ord
 
-> asCode (+1) "hello world"
+> (map . asCode) (+1) "hello world"
 "ifmmp!xpsme"
 ```
 
