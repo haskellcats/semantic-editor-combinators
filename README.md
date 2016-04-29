@@ -222,4 +222,31 @@ values past that point as real. When the data structure is finally updated
 those values will all be gone, but the updates will persist as if they were
 really there!
 
+## Editing sum types
+
+The strategy here is to have no effect when you try to enter the wrong
+case of a sum type. You can also use this strategy when you try to index
+past the end of a list. 
+
+```
+onLeft :: (a -> a) -> Either a b -> Either a b
+onLeft f (Left x) = Left (f x)
+onLeft f y = y
+
+onRight :: (b -> b) -> Either a b -> Either a b
+onRight f (Right x) = Right (f x)
+onRight f y = y
+
+> (onLeft . asCode) (+1) (Left 'c')
+Left 'd'
+
+> (onLeft . asCode) (+1) (Right False)
+Right False
+
+> (onRight . asCode) (+1) (Right False)
+Right True
+```
+
+
 [1]: http://conal.net/blog/posts/semantic-editor-combinators
+
