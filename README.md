@@ -240,11 +240,11 @@ onRight f y = y
 > (onLeft . asCode) (+1) (Left 'c')
 Left 'd'
 
-> (onLeft . asCode) (+1) (Right False)
-Right False
+> (onLeft . asCode) (+1) (Right [Just 0, Nothing, Just 2])
+Right [Just 0, Nothing, Just 2]
 
-> (onRight . asCode) (+1) (Right False)
-Right True
+> (onRight . map . fmap) even (Right [Just 0, Nothing, Just 1])
+Right [Just True, Nothing, Just False]
 ```
 
 ## Something funny
