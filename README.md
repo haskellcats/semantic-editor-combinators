@@ -179,6 +179,17 @@ onLast  :: (a -> a) -> Seq a -> Seq a
 onMatching :: (a -> Bool) -> (a -> a) -> [a] -> [a]
 ```
 
+But wait, some of these can be generalized to be able to change the type
+of the component as well as the value.
+
+```
+left  :: (a -> z) -> (a, b) -> (z, b)
+right :: (b -> z) -> (a, b) -> (a, z)
+```
+
+But you might be restricted to a -> a (no change in type) depending on what
+they are composed with.
+
 ## "Virtual path" example
 
 So far the editors only modify the actual content of a data structure. But
