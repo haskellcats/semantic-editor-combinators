@@ -253,7 +253,7 @@ Right True
 x & f = f x -- reverse function application
 
 > "hello world" & (index 3 . asCode . asBits . index 2) not
-"hehlo world"
+"helho world"
 ```
 
 If you squint really hard it kind of looks like OOP notation.
