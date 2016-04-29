@@ -247,6 +247,17 @@ Right False
 Right True
 ```
 
+## Something funny
+
+```
+x & f = f x -- reverse function application
+
+> "hello world" & (index 3 . asCode . asBits . index 2) not
+"hehlo world"
+```
+
+If you squint really hard it kind of looks like OOP notation.
+
 
 [1]: http://conal.net/blog/posts/semantic-editor-combinators
 
