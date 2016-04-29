@@ -116,7 +116,7 @@ let db =
     , It Nothing 13]
   ]
 
-> (index 0 . onItems . map . onName . fmap) toUpper db
+> (index 0 . onItems . map . onName . fmap) capitalize db
 [Pl
   (Jo "paladin" [TurnUndead])
   [ It (Just "Flute") 11
