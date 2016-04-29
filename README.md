@@ -1,9 +1,9 @@
 # Semantic Editor Combinators
 
-This is a demo of a few forms of what Conal Elliot on [his blog] calls semantic
-editor combinators. It is a functional programming technique for modifying a
-complex immutable nested data structure. The long name semantic editor
-combinator comes from the following three characteristics:
+This is a demo of a few forms of what Conal Elliott on [his blog][1] calls
+semantic editor combinators. It is a functional programming technique for
+modifying a complex immutable nested data structure. The long name semantic
+editor combinator comes from the following three characteristics:
 
 - They are editors because they modify some data type. An editor for type T has
   type T -> T.
@@ -11,8 +11,8 @@ combinator comes from the following three characteristics:
   with other things.
 - The tag "semantic" comes from their ability to not only modify a data
   structure but to make modifications based on a view of the structure. This
-sort of view is what Conal calls the semantic value.  By contrast the actual
-structure is called the syntactic value.
+sort of view is what Conal calls the semantic value, or tangible value. By
+contrast the actual structure is called the syntactic value.
 
 "Functional references" is an earlier name for this technique.
 
@@ -210,3 +210,5 @@ you can then use all the editors you already made for those values and treat
 values past that point as real. When the data structure is finally updated
 those values will all be gone, but the updates will persist as if they were
 really there!
+
+[1]: http://conal.net/blog/posts/semantic-editor-combinators
