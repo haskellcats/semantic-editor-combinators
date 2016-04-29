@@ -93,7 +93,6 @@ db :: [Employee]
 
 > (index 1 . onRank) promote db
 [Emp "ron" 40 Bishop, Emp "peter" 35 King, Emp "heather" 50 King]
-```
 
 > (index 2 . onName) reverse db
 [Emp "ron" 40 Bishop, Emp "peter" 35 Rook, Emp "rehtaeh" 50 King]
